@@ -1,0 +1,17 @@
+
+.Intro {
+    text-decoration: none;
+    color:black;
+    border: 1px solid black;
+    width: 60px;
+    height: 25px;
+    margin:auto;
+    background-color: white;  
+    border-radius: 5px;  
+    
+}
+body{
+    background-image: url(./foto\ comidas.webp);
+    background-size: cover;
+    background-attachment: fixed;
+    }
