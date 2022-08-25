@@ -3,6 +3,7 @@ import {
   GET_RECIPES,
   GET_DETAIL,
   ORD_ALF,
+  GET_DIETS,
   ORD_ALF_REV,
   ORD_SCORE,
   ORD_SCORE_REV,
@@ -24,6 +25,12 @@ const rootReducer = (state = inicialState, { type, payload }) => {
       return {
         ...state,
         RecipesDetail: payload,
+      };
+    }
+    case GET_DIETS: {
+      return {
+        ...state,
+        TipeDiet: payload,
       };
     }
     case ORD_ALF: {

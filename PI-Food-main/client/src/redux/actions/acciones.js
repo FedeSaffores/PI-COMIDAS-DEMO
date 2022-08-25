@@ -34,10 +34,10 @@ export function getName(name) {
     }
   };
 }
-export function getDiets(id) {
+export function getDiets(name) {
   return async (dispatch) => {
     try {
-      const res = await axios.get(`http://localhost:3001/diet/${id}`);
+      const res = await axios.get(`http://localhost:3001/diet/?name=${name}`);
       dispatch({ type: GET_DIETS, payload: res.data });
     } catch (err) {
       throw err;

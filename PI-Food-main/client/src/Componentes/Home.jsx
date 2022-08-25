@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   getAllRecipes,
-  getDetail,
   getName,
   ordAlf,
   ordenAlfRev,
@@ -18,6 +17,7 @@ function Home() {
   const Recipe = useSelector((state) => state.Recipes);
   const [page, setPage] = useState(0);
   const [busqueda, setBusqueda] = useState("");
+  const [dieta, setDieta] = useState("");
 
   const inputHandler = (e) => {
     setBusqueda(e.target.value);
@@ -76,18 +76,48 @@ function Home() {
       <button className="ord4" onClick={() => dispatch(ordScoreRev())}>
         LOWEST RANKED
       </button>
+      <select
+        onChange={(e) => {
+          setDieta(e.target.value);
+          setPage(0);
+          console.log(e.target.value);
+        }}
+        defaultValue={""}
+        className="ORDIETA"
+      >
+        <option value={""}>All the Recipes</option>
+        <option value={"gluten free"}>Gluten Free</option>
+        <option value={"dairy free"}>Dairy Free</option>
+        <option value={"lacto ovo vegetarian"}>Lacto ovo Vegetarian</option>
+        <option value={"vegan"}>Vegan</option>
+        <option value={"paleolithic"}>Paleolithic</option>
+        <option value={"primal"}>Primal</option>
+        <option value={"whole 30"}>Whole 30</option>
+        <option value={"pescatarian"}>Pescatarian</option>
+        <option value={"ketogenic"}>Ketogenic</option>
+        <option value={"fodmap friendly"}>Fodmap friendly</option>
+      </select>
+      {Recipe?.filter((e) =>
+        dieta !== "" ? e.diets.map((x) => x.name).includes(dieta) : true
+      )
+        .slice(page * 10, (page + 1) * 9)
+        .map((e) => {
+          return (
+            <div key={e.id}>
+              <h2>
+                <Link className="Link" to={`/recipes/${e.id}`}>
+                  {e.name}
+                </Link>
+              </h2>
 
-      {Recipe?.slice(page * 10, (page + 1) * 9).map((e) => {
-        return (
-          <div key={e.id}>
-            <h2>
-              <Link to={`/recipes/${e.id}`}>{e.name}</Link>
-            </h2>
-            <img src={e.image} alt={e.name} />
-            <h3>{e.diets}</h3>
-          </div>
-        );
-      })}
+              <img src={e.image} alt={e.name} />
+              <h2>TYPS OF DIETS</h2>
+              {e.diets.map((x) => (
+                <h3 key={x.name}>{x.name} </h3>
+              ))}
+            </div>
+          );
+        })}
     </div>
   );
 }

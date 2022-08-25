@@ -1,0 +1,27 @@
+.lebel{
+    color:white;
+    font-family:arial;
+    font-size: 25px;
+    text-shadow: -1px -1px white, 3px 2px #5878ca
+
+}
+.button{
+    background: grey;
+    color:white;
+    border: 2px solid white;
+    border-radius: 10px 10px 10px 10px;
+}
+.button1{
+    background: grey;
+    color:white;
+    border: 2px solid white;
+    border-radius: 10px 10px 10px 10px;
+    
+}
+
+p{
+    color:white;
+    font-family:arial;
+    font-size: 25px;
+    text-shadow: -1px -1px white, 3px 2px #5878ca
+}

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { createRecipe, getName } from "../redux/actions/acciones";
+import { createRecipe, getDiets } from "../redux/actions/acciones";
+import "./Formulario.css";
 
 const Formulario = () => {
-  const recipes = useSelector((state) => state.Recipes);
+  const allDiets = useSelector((state) => state.TipeDiet);
   const [inputName, setInputName] = useState("");
   const dispatch = useDispatch();
 
@@ -40,7 +41,7 @@ const Formulario = () => {
           ? [...e.target.options]
               .filter((option) => option.selected)
               .map((x) => x.value)
-              .concat(formulario.steps)
+              .concat(formulario.diets)
           : [...e.target.options]
               .filter((option) => option.selected)
               .map((x) => x.value);
@@ -50,7 +51,7 @@ const Formulario = () => {
     });
   };
   useEffect(() => {
-    dispatch(getName(inputName));
+    dispatch(getDiets(inputName));
   }, [inputName]);
 
   const submitForm = (e) => {
@@ -71,17 +72,19 @@ const Formulario = () => {
   };
   return (
     <div>
-      <p>Describe your recipe</p>
+      <p>DESCRIBES YOUR RECIPE</p>
       <form onSubmit={(e) => submitForm(e)} onReset={() => stateReset()}>
         <input
           name="name"
+          autoComplete="off"
           placeholder="Name your Recipe"
           value={formulario.name}
           onChange={setDataHandler}
         />
-        <p>Summary</p>
+        <p>SUMMARY</p>
         <input
           name="summary"
+          autoComplete="off"
           placeholder="summary"
           value={formulario.summary}
           onChange={setDataHandler}
@@ -89,6 +92,7 @@ const Formulario = () => {
         <p>STEPS</p>
         <input
           name="steps"
+          autoComplete="off"
           placeholder="STEPS"
           value={formulario.steps}
           onChange={setDataHandler}
@@ -96,14 +100,41 @@ const Formulario = () => {
         <p>HEALTHSCORE</p>
         <input
           type="number"
+          autoComplete="off"
           name="healthscore"
           max="100"
           min="1"
           value={formulario.healthscore}
           onChange={setDataHandler}
         />
-        <button type="submit">Add Recepi</button>
-        <button type="reset">Delete Recepi</button>
+        <p>SELECT TYPE OF DIET</p>
+        <input
+          type="text"
+          name="select"
+          autoComplete="off"
+          placeholder="find your Diets..."
+          onChange={submitInput}
+        />
+        <select
+          multiple
+          name="diets"
+          onChange={setDataHandler}
+          value={formulario.diets}
+          options={allDiets.map((e) => ({ value: e.id, label: e.name }))}
+        >
+          {allDiets.map((e) => (
+            <option value={e.id} key={e.id}>
+              {e.name}
+            </option>
+          ))}
+        </select>
+
+        <button type="submit" className="button">
+          Add Recepi
+        </button>
+        <button type="reset" className="button1">
+          Delete Recepi
+        </button>
       </form>
     </div>
   );
