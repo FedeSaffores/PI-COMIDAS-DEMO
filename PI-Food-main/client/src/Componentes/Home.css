@@ -4,9 +4,7 @@ h1{
     font-size: 50px;
     font-style:oblique;
 }
-h2{
 
-}
 
 .btn{
     background-color: gray;
@@ -32,9 +30,11 @@ h2{
 }
 .searchInput{
     text-align: center;
-    border-radius: 75px;
+    border-radius: 105px;
     align-items: center;
     justify-content: center;
+    padding: 5px 15px;
+    
 
 
 }
@@ -43,28 +43,31 @@ h2{
         border:2px solid black;
         border-radius: 50px;
         cursor: pointer;
+        padding: 5px 15px;
     }
 .reset{
     background-color: grey;
     border:2px solid black;
     border-radius: 50px;
     cursor: pointer;
+    padding: 5px 15px;
 }
 .ord1{
-    background-color: white;
-    border:2px solid black;
+    background-color:white;
+    border:2px solid white;
     border-radius: 50px;
     float: right;
     margin-top: 40px;
     position: absolute;
-    top:50px;
+    top:90px;
     float:right;
     right:1px;
     display: block;
     padding: 5px 40px;
-    background: #ad94eb;
-    background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
+    color:white;
+    background-image: -webkit-linear-gradient(top, #d4e5e7, #234697);
     cursor: pointer;
+    border-color: white;
 }
 .ord2{
     background-color: white;
@@ -73,14 +76,15 @@ h2{
     float: right;
     margin-top: 80px;
     position: absolute;
-    top:50px;
+    top:100px;
     float:right;
     right:1px;
     display: block;
     padding: 5px 40px;
-    background: #ad94eb;
-    background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
+    color:white;
+    background-image: -webkit-linear-gradient(top, #d4e5e7, #234697);
     cursor: pointer;
+    border-color: white;
 }
 .ord3{
     background-color: white;
@@ -89,14 +93,15 @@ h2{
     float: right;
     margin-top: 40px;
     position: absolute;
-    top:50px;
+    top:90px;
     right:right;
     right:180px;
     display: block;
     padding: 5px 22px;
-    background: #ad94eb;
-    background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
+    color:white;
+    background-image: -webkit-linear-gradient(top, #d4e5e7, #234697);
     cursor: pointer;
+    border-color: white;
 
 }
 .ord4{
@@ -106,24 +111,68 @@ h2{
     float: left;
     margin-top: 79px;
     position: absolute;
-    top:50px;
-    float:right;
+    top:100px;
     right:180px;
     display: block;
     padding: 5px 24px;
-    background: #ad94eb;
-    background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
+    color:white;
+    background-image: -webkit-linear-gradient(top, #d4e5e7, #234697);
     cursor: pointer;
+    border-color: white;
 }
 .ORDIETA{
-    background-color: grey ;
+    background-color: grey;
     border:2px solid black;
-    border-radius: 50px;
-    padding: 2px 15px;
+    border-radius: 20px;
+    padding: 5px 5px;
+    
+    
 }
 
+.makeRecipe{
+    display:block;
+    width: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    border-radius: 20px;
+    margin:20px 15px;
+    padding:10px 15px;
+    text-decoration:none;
+    color:white;
+    background-image: -webkit-linear-gradient(top, #d4e5e7, #234697)
+}
+
+.Link{
+    display:block;
+    margin-left:auto;
+    margin-right: auto;
+    font-size: 25px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration:none;
+    color: #234697;
+    width: 500px;
+    font-weight: 700;
+
+    }
+.Dietas{
+    font-size: 15px;
+    
+    }
+.Types{
+    font-size: 20px;
+    color:#5b77b6
+    
+
+}
+
+
 img {
-    width: 300px;
+    width: 200px;
     border: 5px white solid;
     border-radius: 50px;
     };
+
+
+    

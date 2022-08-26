@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { createRecipe, getDiets } from "../redux/actions/acciones";
+import { Link } from "react-router-dom";
 import "./Formulario.css";
 
 const Formulario = () => {
@@ -72,9 +73,13 @@ const Formulario = () => {
   };
   return (
     <div>
+      <Link to="/recipes" className="Home">
+        INTRO
+      </Link>
       <p>DESCRIBES YOUR RECIPE</p>
       <form onSubmit={(e) => submitForm(e)} onReset={() => stateReset()}>
         <input
+          className="DESCRIBES"
           name="name"
           autoComplete="off"
           placeholder="Name your Recipe"
@@ -83,6 +88,7 @@ const Formulario = () => {
         />
         <p>SUMMARY</p>
         <input
+          className="SUMMARY"
           name="summary"
           autoComplete="off"
           placeholder="summary"
@@ -91,6 +97,7 @@ const Formulario = () => {
         />
         <p>STEPS</p>
         <input
+          className="STEPS"
           name="steps"
           autoComplete="off"
           placeholder="STEPS"
@@ -99,6 +106,7 @@ const Formulario = () => {
         />
         <p>HEALTHSCORE</p>
         <input
+          className="HEALTHSCORE"
           type="number"
           autoComplete="off"
           name="healthscore"
@@ -109,6 +117,7 @@ const Formulario = () => {
         />
         <p>SELECT TYPE OF DIET</p>
         <input
+          className="TDIET"
           type="text"
           name="select"
           autoComplete="off"

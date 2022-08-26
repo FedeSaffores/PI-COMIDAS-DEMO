@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Recipe.css";
 
 function Recipe() {
@@ -16,6 +16,9 @@ function Recipe() {
   console.log(recipe);
   return (
     <div>
+      <Link to="/recipes" className="Home">
+        INTRO
+      </Link>
       <h2>RECETA</h2>
       <h3>{recipe.name}</h3>
       <img src={recipe.image} alt={recipe.image} />

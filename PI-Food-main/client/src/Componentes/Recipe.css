@@ -91,3 +91,19 @@ h3{
     border: 5px solid #5878ca;
     text-align: center;
 }
+.Home{
+    display:block;
+    
+    width: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    border-radius: 20px;
+    margin:20px 15px;
+    padding:10px 15px;
+    text-decoration:none;
+    color:white;
+    background-image: -webkit-linear-gradient(top, #d4e5e7, #234697)
+  
+   
+   
+}

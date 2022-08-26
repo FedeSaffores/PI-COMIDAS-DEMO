@@ -68,7 +68,7 @@ export function createRecipe(recipe) {
   return async function () {
     try {
       const newRecipe = await axios.post(
-        "http://localhost:3001/makeRecipes",
+        "http://localhost:3001/makeRecipe",
         recipe
       );
     } catch (err) {

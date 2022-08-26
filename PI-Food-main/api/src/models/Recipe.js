@@ -8,7 +8,7 @@ module.exports = (sequelize) => {
     {
       id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        autoIncrement: true,
         primaryKey: true,
       },
       name: {
@@ -17,7 +17,7 @@ module.exports = (sequelize) => {
       },
       dishTypes: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       healthscore: {
         type: DataTypes.FLOAT,

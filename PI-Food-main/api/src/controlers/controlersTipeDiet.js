@@ -12,19 +12,16 @@ async function nuevaRecipe(req, res) {
     },
   });
   if (!findRecipe) {
+    const dieta = await Diet.findAll({ where: { id: diets } });
     const addRecipe = await Recipe.create({
       name: name,
       summary: summary,
       healhscore: healthscore,
       steps: steps,
-      diets: diets,
     });
+    addRecipe.addDiets(dieta);
+    return res.send(addRecipe);
   }
-  const DietMatch = await Diet.findAll({
-    where: { name: diets },
-  });
-  const addDiet = await findRecipe.addDiet(DietMatch);
-  return res.send(addDiet);
 }
 async function listarDietas(req, res, next) {
   try {

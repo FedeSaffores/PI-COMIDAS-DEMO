@@ -49,6 +49,11 @@ function Home() {
       >
         Anterior
       </button>
+
+      <Link className="makeRecipe" to={"/makerecipe"}>
+        MAKE YOUR RECIPE
+      </Link>
+
       <input
         type="text"
         placeholder="Search"
@@ -76,6 +81,7 @@ function Home() {
       <button className="ord4" onClick={() => dispatch(ordScoreRev())}>
         LOWEST RANKED
       </button>
+
       <select
         onChange={(e) => {
           setDieta(e.target.value);
@@ -97,6 +103,7 @@ function Home() {
         <option value={"ketogenic"}>Ketogenic</option>
         <option value={"fodmap friendly"}>Fodmap friendly</option>
       </select>
+
       {Recipe?.filter((e) =>
         dieta !== "" ? e.diets.map((x) => x.name).includes(dieta) : true
       )
@@ -109,11 +116,12 @@ function Home() {
                   {e.name}
                 </Link>
               </h2>
-
               <img src={e.image} alt={e.name} />
-              <h2>TYPS OF DIETS</h2>
+              <h2 className="Types">TYPS OF DIETS</h2>
               {e.diets.map((x) => (
-                <h3 key={x.name}>{x.name} </h3>
+                <h3 className="Dietas" key={x.name}>
+                  {x.name}{" "}
+                </h3>
               ))}
             </div>
           );
