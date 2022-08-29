@@ -4,5 +4,5 @@ export const ordAlf = (a, b) => {
   return 0;
 };
 export const ordScore = (a, b) => {
-  return a.healthscore - b.healthscore;
+  return b.healthscore - a.healthscore;
 };

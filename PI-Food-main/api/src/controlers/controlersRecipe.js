@@ -59,7 +59,7 @@ async function getAllRecipe(req, res, next) {
       });
       if (recipe.length === 0) {
         return res.status(404).json({
-          error: `No se encontraron los con el nombre ${req.query.recipe}`,
+          error: `No se encontraron las recetas con el nombre ${req.query.recipe}`,
         });
       }
       res.json(recipe);

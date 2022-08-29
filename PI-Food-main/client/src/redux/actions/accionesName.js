@@ -6,3 +6,4 @@ export const ORD_ALF = "ORD_ALF";
 export const ORD_ALF_REV = "ORD_ALF_REV";
 export const ORD_SCORE = "ORD_SCORE";
 export const ORD_SCORE_REV = "ORD_SCORE_REV";
+export const ORD_PUNTUACION = "ORD_PUNTUACION";

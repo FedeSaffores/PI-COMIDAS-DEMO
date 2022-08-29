@@ -13,7 +13,7 @@ const Formulario = () => {
   const [formulario, setFormulario] = useState({
     name: "",
     summary: "",
-    healthscore: "",
+    healthscore: "1",
     steps: "",
     diets: [],
   });
@@ -21,7 +21,7 @@ const Formulario = () => {
     setFormulario({
       name: "",
       summary: "",
-      healthscore: "",
+      healthscore: "1",
       steps: "",
       diets: [],
     });
@@ -51,6 +51,7 @@ const Formulario = () => {
       [e.target.name]: value,
     });
   };
+  console.log(inputName);
   useEffect(() => {
     dispatch(getDiets(inputName));
   }, [inputName]);
@@ -58,7 +59,12 @@ const Formulario = () => {
   const submitForm = (e) => {
     e.preventDefault();
     var form = true;
-    if (formulario.name.length < 2 || !formulario.diets.length >= 1) {
+    if (
+      formulario.name.length < 2 ||
+      !formulario.diets.length >= 1 ||
+      formulario.healthscore < 1 ||
+      formulario.healthscore > 100
+    ) {
       form = false;
     }
     if (form) {
@@ -74,7 +80,7 @@ const Formulario = () => {
   return (
     <div>
       <Link to="/recipes" className="Home">
-        INTRO
+        HOME
       </Link>
       <p>DESCRIBES YOUR RECIPE</p>
       <form onSubmit={(e) => submitForm(e)} onReset={() => stateReset()}>
@@ -110,8 +116,6 @@ const Formulario = () => {
           type="number"
           autoComplete="off"
           name="healthscore"
-          max="100"
-          min="1"
           value={formulario.healthscore}
           onChange={setDataHandler}
         />

@@ -70,10 +70,10 @@ function Home() {
         Reset
       </button>
       <button className="ord1" onClick={() => dispatch(ordAlf())}>
-        ORD ALP A-Z
+        ORDER A-Z
       </button>
       <button className="ord2" onClick={() => dispatch(ordenAlfRev())}>
-        ORD ALP Z-A
+        ORDER Z-A
       </button>
       <button className="ord3" onClick={() => dispatch(ordScore())}>
         HIGHEST RANKED

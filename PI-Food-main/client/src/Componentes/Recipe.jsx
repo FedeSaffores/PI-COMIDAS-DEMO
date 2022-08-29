@@ -13,11 +13,11 @@ function Recipe() {
         .then((res) => setRecipe(res));
   }, [receta, setRecipe]);
   if (!recipe) return null;
-  console.log(recipe);
+
   return (
     <div>
       <Link to="/recipes" className="Home">
-        INTRO
+        HOME
       </Link>
       <h2>RECETA</h2>
       <h3>{recipe.name}</h3>

@@ -142,6 +142,7 @@ h1{
     background-image: -webkit-linear-gradient(top, #d4e5e7, #234697)
 }
 
+
 .Link{
     display:block;
     margin-left:auto;
@@ -155,6 +156,12 @@ h1{
     width: 500px;
     font-weight: 700;
 
+    }
+    .Link:hover{
+        
+        color: #638ea0;
+        padding:5px;
+        
     }
 .Dietas{
     font-size: 15px;

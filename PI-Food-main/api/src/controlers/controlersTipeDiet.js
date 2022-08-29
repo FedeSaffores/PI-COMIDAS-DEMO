@@ -16,7 +16,7 @@ async function nuevaRecipe(req, res) {
     const addRecipe = await Recipe.create({
       name: name,
       summary: summary,
-      healhscore: healthscore,
+      healthscore: healthscore,
       steps: steps,
     });
     addRecipe.addDiets(dieta);

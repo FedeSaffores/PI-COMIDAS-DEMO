@@ -1,11 +1,20 @@
 
-.Intro {
-    border-radius: 10px;  
-    width: 100px;
-    height: 50px;
-    border-radius: 25px;
-    background-color: rgb(173, 170, 170);
-    
+.b{
+    text-decoration:none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    border-radius: 20px;  
+    margin:20px 15px;
+    padding:20px 30px;
+    width: 200px;
+    height: 100px;
+    border-radius: 40px;
+    background-color: rgba(90, 74, 182, 0.815);
+    color:white;
+}
+.b:hover{
+    padding:40px;
+    background-color: rgba(60, 150, 223, 0.815);
 }
 body{
     background-image: url(./foto\ comidas.webp);

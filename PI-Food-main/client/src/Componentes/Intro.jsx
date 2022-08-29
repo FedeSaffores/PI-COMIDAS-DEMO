@@ -4,11 +4,9 @@ import "./Intro.css";
 const Intro = () => {
   return (
     <div>
-      <button className="Intro">
-        <Link to="/recipes" className="#b">
-          INTRO
-        </Link>
-      </button>
+      <Link className="b" to="/recipes">
+        HOME
+      </Link>
     </div>
   );
 };

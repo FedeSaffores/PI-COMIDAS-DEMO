@@ -57,6 +57,7 @@ const rootReducer = (state = inicialState, { type, payload }) => {
         Recipes: state.Recipes.slice().sort(ordScore).reverse(),
       };
     }
+
     default:
       return state;
   }

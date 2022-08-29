@@ -4,7 +4,6 @@ import Intro from "./Componentes/Intro";
 import Recipe from "./Componentes/Recipe";
 import Formulario from "./Componentes/Formulario";
 import "./App.css";
-
 function App() {
   return (
     <BrowserRouter>
