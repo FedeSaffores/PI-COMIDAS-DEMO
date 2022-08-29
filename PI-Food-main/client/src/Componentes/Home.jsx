@@ -81,12 +81,10 @@ function Home() {
       <button className="ord4" onClick={() => dispatch(ordScoreRev())}>
         LOWEST RANKED
       </button>
-
       <select
         onChange={(e) => {
           setDieta(e.target.value);
           setPage(0);
-          console.log(e.target.value);
         }}
         defaultValue={""}
         className="ORDIETA"
@@ -107,7 +105,8 @@ function Home() {
       {Recipe?.filter((e) =>
         dieta !== "" ? e.diets.map((x) => x.name).includes(dieta) : true
       )
-        .slice(page * 10, (page + 1) * 9)
+
+        .slice(page * 9, (page + 1) * 9)
         .map((e) => {
           return (
             <div key={e.id}>
